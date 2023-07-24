@@ -46,8 +46,8 @@ xhr.onreadystatechange = function () {
     var quote = json.content;
     
     // Limit the quote to 100 characters
-    if (quote.length > 100) {
-      quote = quote.substring(0, 97) + '...';
+    if (quote.length > 900) {
+      quote = quote.substring(0, 897) + '...';
     }
 
     // Create a new div element for the quote
