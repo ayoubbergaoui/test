@@ -24,7 +24,7 @@ var css = `.logo img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px;
+  max-width: 600px;
 }`;
 
 // Create a new style element
