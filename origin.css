@@ -1,0 +1,26 @@
+/* Custom style for Autobahn Jenkins Platform */
+.logo img {
+  content:url("https://download.6wind.com/static/logo.svg");
+  /*change the path to your logo path*/
+  height: 60px; /* adjust the size as necessary */
+  width: 120px; /* adjust the size as necessary */
+}
+
+#jenkins-name-icon {
+  display: none;
+}
+
+#jenkins-head-icon {
+  height: 9rem;
+  width: 12rem;
+}
+
+.logo:after {
+  content: "bienvenue chez 6wind jenkins";
+  display: inline-block;
+  font-size: 1.5em; /* adjust the size as necessary */
+  font-weight: bold; /* text is now bold */
+  font-family: Verdana, sans-serif; /* text font is now Verdana */
+  color: #FFFFFF; /* color is white */
+  margin-left: 20px; /* adjust the spacing as necessary */
+}
