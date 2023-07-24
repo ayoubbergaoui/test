@@ -48,3 +48,16 @@ xhr.onreadystatechange = function () {
     // Limit the quote to 100 characters
     if (quote.length > 100) {
       quote = quote.substring(0, 97) + '...';
+    }
+
+    // Create a new div element for the quote
+    var quoteElement = document.createElement('div');
+    quoteElement.id = 'quote';
+    quoteElement.innerText = quote;
+
+    // Append the quote element to the .logo element
+    var logoElement = document.querySelector('.logo');
+    logoElement.appendChild(quoteElement);
+  }
+}
+xhr.send();
