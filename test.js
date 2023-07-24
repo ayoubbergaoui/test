@@ -1,0 +1,47 @@
+// Define your CSS as a string
+var css = `.logo img {
+  content:url("https://download.6wind.com/static/logo.svg");
+  height: 60px;
+  width: 120px;
+}
+
+#jenkins-name-icon {
+  display: none;
+}
+
+#jenkins-head-icon {
+  height: 9rem;
+  width: 12rem;
+}
+
+#quote {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  color: #FFFFFF;
+  margin-left: 20px;
+}`;
+
+// Create a new style element
+var style = document.createElement('style');
+style.type = 'text/css';
+
+// Append the CSS string to the style element
+style.appendChild(document.createTextNode(css));
+
+// Append the style element to the head of the document
+document.head.appendChild(style);
+
+// Then add your JS logic
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.quotable.io/random", true);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    var json = JSON.parse(xhr.responseText);
+    var quote = json.content;
+    var quoteElement = document.getElementById('quote');
+    quoteElement.innerText = quote;
+  }
+}
+xhr.send();
