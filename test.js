@@ -40,8 +40,15 @@ xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     var json = JSON.parse(xhr.responseText);
     var quote = json.content;
-    var quoteElement = document.getElementById('quote');
+    
+    // Create a new div element for the quote
+    var quoteElement = document.createElement('div');
+    quoteElement.id = 'quote';
     quoteElement.innerText = quote;
+
+    // Append the quote element to the .logo element
+    var logoElement = document.querySelector('.logo');
+    logoElement.appendChild(quoteElement);
   }
 }
 xhr.send();
