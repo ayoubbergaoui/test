@@ -21,6 +21,10 @@ var css = `.logo img {
   font-family: Verdana, sans-serif;
   color: #FFFFFF;
   margin-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }`;
 
 // Create a new style element
@@ -41,14 +45,6 @@ xhr.onreadystatechange = function () {
     var json = JSON.parse(xhr.responseText);
     var quote = json.content;
     
-    // Create a new div element for the quote
-    var quoteElement = document.createElement('div');
-    quoteElement.id = 'quote';
-    quoteElement.innerText = quote;
-
-    // Append the quote element to the .logo element
-    var logoElement = document.querySelector('.logo');
-    logoElement.appendChild(quoteElement);
-  }
-}
-xhr.send();
+    // Limit the quote to 100 characters
+    if (quote.length > 100) {
+      quote = quote.substring(0, 97) + '...';
