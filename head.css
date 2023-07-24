@@ -1,0 +1,23 @@
+.logo img {
+  content:url("https://download.6wind.com/static/logo.svg");
+  height: 60px;
+  width: 120px;
+}
+
+#jenkins-name-icon {
+  display: none;
+}
+
+#jenkins-head-icon {
+  height: 9rem;
+  width: 12rem;
+}
+
+#quote {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  color: #FFFFFF;
+  margin-left: 20px;
+}
